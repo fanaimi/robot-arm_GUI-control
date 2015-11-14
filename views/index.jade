@@ -3,15 +3,27 @@ extends layout
 block content
   div(class="container-fluid")
     div(class="row")
-      h1=title
-      div(class="col-xs-12 col-sm-6 col-md-6 col-lg-6 box")
-        h4 control forearm and claw
-        p
-          button(class="btn btn-primary glyphicon glyphicon-arrow-up")
-        p
-          button(class="btn btn-primary glyphicon glyphicon-arrow-left")
-          button(class="btn btn-primary glyphicon glyphicon-arrow-right")
-        p
-          button(class="btn btn-primary glyphicon glyphicon-arrow-down")
-      div(class="col-xs-12 col-sm-6 col-md-6 col-lg-6 box")
-        p box2
+      h3=title
+      div(class="col-xs-5 col-sm-6 col-md-6 col-lg-6 box")
+        h4 forearm & claw
+        div(class="boxMiddle")
+          p
+            button(class="btn btn-primary glyphicon glyphicon-arrow-up")
+          p
+            button(class="btn btn-primary glyphicon glyphicon-arrow-left")
+            button(class="btn btn-primary glyphicon glyphicon-stop")
+            button(class="btn btn-primary glyphicon glyphicon-arrow-right")
+          p
+            button(class="btn btn-primary glyphicon glyphicon-arrow-down")
+      div(class="col-xs-5 col-xs-offset-2 col-sm-6 col-sm-offset-0 col-md-6 col-lg-6 box")
+        h4 arm
+        div(class="boxMiddle")
+          p
+            button(class="btn btn-info glyphicon glyphicon-arrow-up")
+          p
+            button(class="btn btn-info glyphicon glyphicon-arrow-left")
+            button(class="btn btn-info glyphicon glyphicon-stop")
+            button(class="btn btn-info glyphicon glyphicon-arrow-right")
+          p
+            button(class="btn btn-info glyphicon glyphicon-arrow-down")
+
