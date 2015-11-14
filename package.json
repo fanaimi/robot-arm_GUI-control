@@ -1,0 +1,37 @@
+{
+  "name": "robot-arm_GUI-control",
+  "version": "1.0.0",
+  "description": "controlling a robot arm with mobile GUI",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fanaimi/robot-arm_GUI-control.git"
+  },
+  "keywords": [
+    "arduino",
+    "johnny-five",
+    "express",
+    "socket.io"
+  ],
+  "author": "fanaimi, emiliano fantasia",
+  "license": "GNU v2",
+  "bugs": {
+    "url": "https://github.com/fanaimi/robot-arm_GUI-control/issues"
+  },
+  "homepage": "https://github.com/fanaimi/robot-arm_GUI-control",
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "bootstrap-slider": "^5.2.5",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "johnny-five": "^0.9.10",
+    "morgan": "~1.6.1",
+    "nodemon": "^1.8.1",
+    "serve-favicon": "~2.3.0",
+    "socket.io": "^1.3.7"
+  }
+}
