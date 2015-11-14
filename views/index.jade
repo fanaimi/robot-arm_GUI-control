@@ -3,27 +3,49 @@ extends layout
 block content
   div(class="container-fluid")
     div(class="row")
-      h3=title
+      // h3=title
       div(class="col-xs-5 col-sm-6 col-md-6 col-lg-6 box")
         h4 forearm & claw
         div(class="boxMiddle")
           p
-            button(class="btn btn-primary glyphicon glyphicon-arrow-up")
+            button(class="btn btn-primary glyphicon glyphicon-arrow-up",
+              data-limit="180",
+              data-param="zAngle")
           p
-            button(class="btn btn-primary glyphicon glyphicon-arrow-left")
+            button(class="btn btn-primary glyphicon glyphicon-arrow-left",
+              data-min="true",
+              data-limit="125",
+              data-param="cAngle")
             button(class="btn btn-primary glyphicon glyphicon-stop")
-            button(class="btn btn-primary glyphicon glyphicon-arrow-right")
+
+            button(class="btn btn-primary glyphicon glyphicon-arrow-right",
+              data-limit="165",
+              data-param="cAngle")
           p
-            button(class="btn btn-primary glyphicon glyphicon-arrow-down")
+            button(class="btn btn-primary glyphicon glyphicon-arrow-down",
+              data-min="true",
+              data-limit="0",
+              data-param="zAngle")
       div(class="col-xs-5 col-xs-offset-2 col-sm-6 col-sm-offset-0 col-md-6 col-lg-6 box")
         h4 arm
         div(class="boxMiddle")
           p
-            button(class="btn btn-info glyphicon glyphicon-arrow-up")
+            button(class="btn btn-info glyphicon glyphicon-arrow-up",
+              data-limit="180",
+              data-param="yAngle")
           p
-            button(class="btn btn-info glyphicon glyphicon-arrow-left")
+            button(class="btn btn-info glyphicon glyphicon-arrow-left",
+              data-limit="180",
+              data-param="xAngle")
             button(class="btn btn-info glyphicon glyphicon-stop")
-            button(class="btn btn-info glyphicon glyphicon-arrow-right")
+
+            button(class="btn btn-info glyphicon glyphicon-arrow-right",
+              data-min="true",
+              data-limit="0",
+              data-param="xAngle")
           p
-            button(class="btn btn-info glyphicon glyphicon-arrow-down")
+            button(class="btn btn-info glyphicon glyphicon-arrow-down",
+              data-min="true",
+              data-limit="0",
+              data-param="yAngle")
 
