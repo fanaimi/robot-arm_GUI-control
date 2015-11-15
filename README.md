@@ -1,11 +1,13 @@
 # robot-arm_GUI-control
 
-## project not ready yet
+## project almost ready
 
 
 ##### completed a simple GUI
 
+##### GUI now works to control robot arm
+
 #### TO DO:
-* client JS
-* websockets to control johnny-five
+
 * documentation
+* code optimisation
