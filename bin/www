@@ -21,11 +21,8 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-/**
- * Setting Socket.io
- */
 
-var io = require("socket.io")(server);
+
 
 
 /**
@@ -95,3 +92,80 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+
+
+/**
+ * Setting Socket.io
+ */
+
+var io = require("socket.io")(server);
+
+
+  var j5 = require("johnny-five");
+  var _port = "/dev/tty.usbmodem1411"
+      ,   _board = new j5.Board(_port)
+      ,   _pin = 9
+      ,   _pin1 = 10
+      ,   _pin2 = 11
+      ,   _pin3 = 12
+
+      ,   _xServo
+      ,   _yServo
+      ,   _zServo
+      ,   _cServo
+
+      , angles = {
+          xAngle : 90 ,
+          yAngle : 90 ,
+          zAngle : 90 ,
+          cAngle : 125
+        }
+  ;
+
+
+
+  console.log('wait for the board to be ready...');
+
+_board.on("ready", function() {
+  $$this = this;
+  io.on("connection", function(socket) {
+    socket.emit('boardReady');
+    console.log("board ready.");
+
+    _xServo = new j5.Servo(_pin);
+    _yServo = new j5.Servo(_pin1);
+    _zServo = new j5.Servo(_pin2);
+    _cServo = new j5.Servo(_pin3);
+
+
+    var  servos = {
+      "xAngle" : _xServo,
+      "yAngle" : _yServo,
+      "zAngle" : _zServo,
+      "cAngle" : _cServo
+    };
+
+    $$this.repl.inject({
+      board   : _board
+      , s       : _xServo
+      , s1       : _yServo
+      , s2       : _zServo
+      , s3       : _cServo
+    });
+
+      _xServo.to(angles.xAngle, 500);
+      _yServo.to(angles.yAngle, 500);
+      _zServo.to(angles.zAngle, 500);
+      _cServo.to(angles.cAngle, 500);
+
+
+
+
+
+  });// on socket connection
+});// BOARD READY
+
+
+
+
