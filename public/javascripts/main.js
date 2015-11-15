@@ -5,6 +5,7 @@
 
 (function(){
 var
+    socket = io(),
     params = {
         xAngle: 90,
         yAngle: 90,
@@ -16,40 +17,57 @@ var
     intervalDuration = 50,
 
     init = function(){
-        console.log("foo");
+
+
+        socket.on("boardReady", function(){
+           console.log("yeah ");
+        });
+
         $(".row").on("mousedown", ".btn[data-limit]", function(){
            var $this = $(this),
                foo = function(){
                    var
-                   //$this =  $(this),
                        limit = $this.attr("data-limit"),
                        param = $this.attr("data-param"),
 
                        val,
                        $h4 = $this.parent().parent().siblings("h4")
-                       ;
+
+                       moveBot = function(){
+                           val = params[param] += step;
+                           $h4.html( param + ", " + limit + ", " + val);
+
+                           var evtData = {
+                               param : param,
+                               limit: limit,
+                               val : val
+                           };
+                           socket.emit("moveArm", evtData);
+                       }// moveBot
+                   ;
 
                    if($this.attr("data-min")){
-                       // console.log(-1)
                        step = -5;
+                       val = params[param];
+                        if(val > limit ){
+
+                            moveBot();
+                        }
                    } else {
-                       // console.log(1)
                        step = 5;
-                   }
+                       val = params[param];
+                       if(val < limit ){
+                           moveBot();
+                       }
+                   }// if data-min
 
-                   val = params[param] += step;
-
-                   //console.log( params );
-                   $h4.html( param + ", " + limit + ", " + val);
-
-                   // console.log(param, limit);
-               };
+               };// foo
             foo();
            interval = setInterval(function(){
                foo();
            }, intervalDuration);
 
-        });
+        }); // on mousedown
 
         $(".row").on("mouseup", ".btn[data-limit]", function(){
             clearInterval(interval);
