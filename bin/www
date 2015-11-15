@@ -161,7 +161,11 @@ _board.on("ready", function() {
 
 
 
+    socket.on("moveArm", function (data) {
+      servos[data.param].to(data.val);
 
+      console.log(data);
+    });// on moveArm
 
   });// on socket connection
 });// BOARD READY
