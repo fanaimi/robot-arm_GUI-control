@@ -1,13 +1,12 @@
 # robot-arm_GUI-control
 
-## project almost ready
+## project ready (v1.0.0)
 
-
-##### completed a simple GUI
-
-##### GUI now works to control robot arm
 
 #### TO DO:
 
+* blog post 
 * documentation
 * code optimisation
+* improve touch response, bit slow now
+* try a multi touch library (maybe hammerJS?)
