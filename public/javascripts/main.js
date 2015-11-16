@@ -1,6 +1,8 @@
 /**
- * @name    main.js
- * @desc    takes care of sliders
+ * @name        main.js
+ * @project     robot-arm_GUI-control
+ * @author      fanaimi, emiliano fantasia
+ * @desc        client side to send socket events in real time
  */
 
 (function(){
@@ -88,5 +90,4 @@ var
 ;
 
 window.addEventListener("load", init);
-//$(document).on("ready", init);
 })();
