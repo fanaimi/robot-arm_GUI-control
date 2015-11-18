@@ -9,4 +9,4 @@
 * documentation
 * code optimisation
 * improve touch response, bit slow now
-* try a multi touch library (maybe hammerJS?)
+* try a multi touch library (no hammerJS)
