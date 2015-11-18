@@ -16,7 +16,7 @@ var
     },
     step,
     interval,
-    intervalDuration = 50,
+    intervalDuration = 20,
 
     init = function(){
 
@@ -49,14 +49,14 @@ var
                    ;
 
                    if($this.attr("data-min")){
-                       step = -5;
+                       step = -2;
                        val = params[param];
                         if(val > limit ){
 
                             moveBot();
                         }
                    } else {
-                       step = 5;
+                       step = 2;
                        val = params[param];
                        if(val < limit ){
                            moveBot();
@@ -86,6 +86,9 @@ var
         $(".row").on("touchcancel", ".btn[data-limit]", function(){
             clearInterval(interval);
         });
+
+
+
     }// init
 ;
 
